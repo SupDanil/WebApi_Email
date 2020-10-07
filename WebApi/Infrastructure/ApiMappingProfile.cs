@@ -10,9 +10,10 @@ namespace WebApi.Infrastructure
 {
     public  class ApiMappingProfile : Profile 
     {
-       public  void Configure()
+       public ApiMappingProfile()
         {
-            CreateMap<EmailContract, EmailModel>();
+            CreateMap<EmailContract, EmailModel>().
+                ForMember(dest => dest.Title, opt => opt.MapFrom(src => src.Subject));
         }
 
     }

@@ -11,6 +11,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using WebApi.Interfaces;
+using WebApi.Services;
 
 namespace WebApi
 {
@@ -25,7 +27,7 @@ namespace WebApi
 
         public void ConfigureServices(IServiceCollection services)
         {
-            
+            services.AddTransient<IEmailService, EmailService>();
             services.AddControllers();
             
         }

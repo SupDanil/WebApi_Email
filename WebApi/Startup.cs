@@ -25,8 +25,9 @@ namespace WebApi
 
         public void ConfigureServices(IServiceCollection services)
         {
+            
             services.AddControllers();
-            services.AddAutoMapper();
+            
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

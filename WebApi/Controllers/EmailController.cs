@@ -10,7 +10,8 @@ namespace WebApi.Controllers
     [Route("api/emails")]
     public class EmailController : ControllerBase
     {
-        public void Post()
+        [HttpPost]
+        public void Post([FromBody] EmailContract contract)
         {
 
         }
